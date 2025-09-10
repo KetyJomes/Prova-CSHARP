@@ -19,6 +19,9 @@ public class toursDbContext(DbContextOptions<toursDbContext> options) : DbContex
 
         model.Entity<User>();
 
-        model.Entity<Place>();
+        model.Entity<Place>()
+        .HasOne(p => p.user)
+        .WithMany(p => p.places)
+        .OnDelete(DeleteBehavior.NoAction);
     }
 }
