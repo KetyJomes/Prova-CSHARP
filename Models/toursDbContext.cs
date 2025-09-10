@@ -9,6 +9,8 @@ public class toursDbContext(DbContextOptions<toursDbContext> options) : DbContex
     public DbSet<Place> Places => Set<Place>();
     public DbSet<PlacePoint> PlacesPoints => Set<PlacePoint>();
 
+    public object PlacePoint { get; internal set; }
+
     protected override void OModelCreating(ModelBuilder model)
     {
         model.Entity<PlacePoint>()
@@ -20,8 +22,8 @@ public class toursDbContext(DbContextOptions<toursDbContext> options) : DbContex
         model.Entity<User>();
 
         model.Entity<Place>()
-        .HasOne(p => p.user)
-        .WithMany(p => p.places)
-        .OnDelete(DeleteBehavior.NoAction);
+            .HasOne(p => p.users)
+            .WithMany(p => p.places)
+            .OnDelete(DeleteBehavior.NoAction);
     }
 }

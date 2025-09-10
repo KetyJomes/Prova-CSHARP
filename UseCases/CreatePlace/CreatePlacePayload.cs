@@ -15,7 +15,6 @@ public record CreatePlacePayload
     [MinLength(40)]
     [MaxLength(200)]
 
-
 }
 
 

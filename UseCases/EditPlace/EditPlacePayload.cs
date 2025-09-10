@@ -8,4 +8,6 @@ public record EditPlacePayload
     public Guid PlacePointID;
      public Guid PlaceID;
     internal object userID;
+
+    public object NewDescription { get; internal set; }
 }

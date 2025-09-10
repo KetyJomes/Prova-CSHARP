@@ -26,3 +26,20 @@ public class EditPlaceUseCase(toursDbContext ctx)
 
     }
 }
+
+internal class Result<T>
+{
+    internal static Results<EditPlaceResponse> Fail(string v)
+    {
+        throw new NotImplementedException();
+    }
+
+    internal static Results<EditPlaceResponse> Success(object value)
+    {
+        throw new NotImplementedException();
+    }
+}
+
+public class Results<T>
+{
+}

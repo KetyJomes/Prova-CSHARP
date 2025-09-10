@@ -1,3 +1,7 @@
+using Tours.Models;
+using Tours.Usecase.EditPlace;
+using Tours.UseCase.GetPlace;
+
 namespace Tours.Usecase.GetPlace;
 
 public class GetPlaceUseCase(toursDbContext ctx)
