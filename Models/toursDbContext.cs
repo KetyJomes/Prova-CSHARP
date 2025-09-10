@@ -11,8 +11,14 @@ public class toursDbContext(DbContextOptions<toursDbContext> options) : DbContex
 
     protected override void OModelCreating(ModelBuilder model)
     {
-        model.Entity<Place>()
-        .HasOne(p => p.)
-    }
+        model.Entity<PlacePoint>()
+        .HasOne(p => p.placesTitle)
+        .WithMany(p => p.placesPoints)
+        .HasForeignKey(t => t.placesTitle)
+        .OnDelete(DeleteBehavior.NoAction);
 
+        model.Entity<User>();
+
+        model.Entity<Place>();
+    }
 }
