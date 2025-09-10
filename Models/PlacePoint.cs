@@ -1,9 +1,9 @@
 namespace Tours.Models;
 
-public class PlacesPoints
+public class PlacePoint
 {
     public Guid ID { get; set; }
     public string PontsTitle { get; set; }
-    public Places places { get; set; }
+    public Place places { get; set; }
 
 }
